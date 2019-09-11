@@ -1,0 +1,6 @@
+horacio.estevez@gmail.com
+https://github.com/HoracioGutierrez/react-accenture
+-----------------------------------------------------
+
+npm i -g create-react-app (instalacion global del paquete base)
+create-react-app <nombreProyecto>(creacion del proyecto, no admite mayus)
