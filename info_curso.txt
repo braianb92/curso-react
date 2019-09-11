@@ -4,3 +4,22 @@ https://github.com/HoracioGutierrez/react-accenture
 
 npm i -g create-react-app (instalacion global del paquete base)
 create-react-app <nombreProyecto>(creacion del proyecto, no admite mayus)
+
+
+-----------------------
+*no hay 2-way data-binding
+*Librerias React: 1-react 2-react-DOM
+*La variable React(import) siempre presente para los exports/imports
+*Todos los componentes de React son funciones en mayuscula:
+*Siempre retornar otro React.Component, un DOMElement o String;
+
+	function App(){return "Hola Mundo"}
+	let App= () => {return "Hola Mundo"}
+	let App= () => "Hola Mundo"
+
+
+*Un componente ejecutado se escribe en forma JSX:
+	App() === <App/> 
+
+*Funcion tipo class --> class <nombreFuncion> extends React.Component
+Estas funciones siempre tienen un metodo render el cual retorno los elementos.
