@@ -23,3 +23,19 @@ create-react-app <nombreProyecto>(creacion del proyecto, no admite mayus)
 
 *Funcion tipo class --> class <nombreFuncion> extends React.Component
 Estas funciones siempre tienen un metodo render el cual retorno los elementos.
+
+*Un componente de tipo clase puede tener estado(state) el cual
+es creado en su constructor. Este estado puede ser compartido a todos sus componentes
+hijos. Cada vez que el estado cambia, este y todos los componentes que lo usen, 
+van a volver a ejecutar su metedo render
+
+*Cualquier componente de React puede recibir parametros
+(props), usualmente son el state de un componente padre y se escriben
+en JSX como atributos de HTML:
+	<App required /> === App({required:true})
+	<App test="hola" /> === App({test:"hola"})
+	<App fn={()=>{}} /> === App({fn:()=>{}})
+
+*El estado de un componente no puede ser modificado por asignacion
+de variable sino a traves de thi.setState({}),en donde describimos
+como deberia verse el proximo estado de la aplicacion.

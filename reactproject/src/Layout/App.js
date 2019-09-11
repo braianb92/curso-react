@@ -29,11 +29,26 @@ import Footer from "./Footer";
 
 class App extends Component
 {
+    constructor()
+    {
+        super();
+        this.state ={
+            links : ["perfil","portfolio","contacto"],
+            texto : "Lorem ipsum dolor sit amet"
+        }
+    }
+
     render()
     {
+        //asdfa
+        let {links,texto} = this.state;
         return (
             <>
-                <Header/>
+                <Header links={links}/>
+                <p>{texto}</p>
+                <button onClick={()=>{
+                    this.setState({texto: "Ipsum Lorem"})
+                }}>Click!</button>
                 <Main/>
                 <Footer/>
             </>
