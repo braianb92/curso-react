@@ -36,6 +36,12 @@ class App extends Component
             links : ["perfil","portfolio","contacto"],
             texto : "Lorem ipsum dolor sit amet"
         }
+        this.cambiarTexto = this.cambiarTexto.bind(this);
+    }
+
+    cambiarTexto()
+    {
+        this.setState({texto: "Ipsum Lorem"});
     }
 
     render()
@@ -46,9 +52,7 @@ class App extends Component
             <>
                 <Header links={links}/>
                 <p>{texto}</p>
-                <button onClick={()=>{
-                    this.setState({texto: "Ipsum Lorem"})
-                }}>Click!</button>
+                <button onClick={this.cambiarTexto}>Click!</button>
                 <Main/>
                 <Footer/>
             </>

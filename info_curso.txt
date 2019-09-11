@@ -1,5 +1,6 @@
 horacio.estevez@gmail.com
 https://github.com/HoracioGutierrez/react-accenture
+video: The definitive guide to object-oriented javascript.
 -----------------------------------------------------
 
 npm i -g create-react-app (instalacion global del paquete base)
@@ -39,3 +40,13 @@ en JSX como atributos de HTML:
 *El estado de un componente no puede ser modificado por asignacion
 de variable sino a traves de thi.setState({}),en donde describimos
 como deberia verse el proximo estado de la aplicacion.
+
+*CONTEXTO: Hace referencia al objeto que contiene a la funcion, por lo
+general y esta en la palabra reservada "this". No es estatico, es decir que 
+puede cambiar dependiendo la ejecucion o el programador.
+	function foo(){
+		console.log(this)
+	}
+	foo() //devuelve window{}
+
+//CALL - APPLY - BIND - NEW
