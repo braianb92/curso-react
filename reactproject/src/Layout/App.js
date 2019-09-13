@@ -38,7 +38,10 @@ class App extends Component
             links : ["perfil","portfolio","contacto"],
             texto : "Lorem ipsum dolor sit amet",
             contador: 0,
-            visible: true
+            visible: true,
+            nombre: "",
+            apellido: "",
+            usuarios: []
         }
         this.cambiarTexto = this.cambiarTexto.bind(this);
         this.aumentarContador = this.aumentarContador.bind(this);
@@ -46,6 +49,7 @@ class App extends Component
         this.resetContador = this.resetContador.bind(this);
         this.toogleVisibility=this.toogleVisibility.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleChange=this.handleChange.bind(this);
     }
 
     handleSubmit(e)
@@ -60,10 +64,49 @@ class App extends Component
         // </form>
 
         //3)Con target(referencia a quien dispara el evento)
-        let nombre = e.target[0].value;
-        console.dir(nombre);
+        // let nombre = e.target[0].value;
+        // console.dir(nombre);
+
+        //4)EFICIENTE - Controlar el cambio del input y a cada
+        //cambio de valor, guardarlo en el state de un padre. Usar
+        //este valor para retroalimentar el mismo input.
+       
+        // let user = {[this.state.nombre]:this.state.apellido};
+        // this.state.usuarios.push(user);
+        // console.log(this.state.usuarios);
+
+        this.setState({
+            usuarios: [
+                ...this.state.usuarios,
+                {
+                   nombre: this.state.nombre,
+                    apellido: this.state.apellido
+                }
+            ],
+            nombre: "",
+            apellido: ""
+        });
+        
+        
         
 
+    }
+
+    handleChange(e)
+    {
+        // let id = e.target.id;
+        // let value = e.target.value;
+        // let campo={};
+        // campo[id]=value;
+        //console.log (`${id} : ${value});
+        //this.setState(campo)
+        //console.log(campo);
+
+        this.setState({[e.target.id]:e.target.value});
+       
+        
+        
+        
     }
 
     cambiarTexto()
@@ -92,15 +135,16 @@ class App extends Component
     }
 
     render()
-    {
-        //asdfa
-        let {links,contador,visible} = this.state;
+    {   console.clear();
+        console.table(this.state.usuarios);
+        let {links,contador,visible,nombre,apellido} = this.state;
         return (
             <>
                 <Header links={links}/>
                 <Contador contador={contador} aumentarCont={this.aumentarContador}
                 disminuirContador={this.disminuirContador} resetContador={this.resetContador}/>
-                <Formulario toogleVisibility={this.toogleVisibility} visible={visible} handleSubmit={this.handleSubmit} />
+                <Formulario toogleVisibility={this.toogleVisibility} visible={visible} handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange} nombre={nombre} apellido={apellido} />
                 <Main/>
                 <Footer/>
             </>

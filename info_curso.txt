@@ -1,6 +1,10 @@
 horacio.estevez@gmail.com
 https://github.com/HoracioGutierrez/react-accenture
+https://github.com/rus0000/jsinheritance
 video: The definitive guide to object-oriented javascript.
+video: source decoded.
+cursos: https://tinyurl.com/y5cwoj8y
+cursos: cursosmegaup.bid
 -----------------------------------------------------
 
 npm i -g create-react-app (instalacion global del paquete base)
