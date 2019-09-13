@@ -50,3 +50,29 @@ puede cambiar dependiendo la ejecucion o el programador.
 	foo() //devuelve window{}
 
 //CALL - APPLY - BIND - NEW
+
+*CICLO DE VIDA DE UN COMPONENTE: (metodos de ciclo de vida son funciones de clase presstablecidas en React
+y solo funcionan para componentes de tipo clase, no para componentes funcionales. Se separan en tres grupos):
+-Mount-->
+	constructor : inicio del comp. Aca creamos el estado, bindeamos metedos
+	y hacemos configs extra.
+
+	componentWillMount: "promise"
+
+	render: UI del comp en JSX.
+
+	componentDidMount: Subscripciones a APIs REST y/o DB.
+
+-Update-->
+	shouldComponentUpdate: Dado que cada componente se actualiza
+	por cambios de proprs, recepcion de props y/o cambio de
+	estado, este metodos es ideal para cuando recibimos
+	nuevos props que son iguales a los que ya teniamos. (optimizacion retorna bool).
+
+	render: UI del comp en JSX.
+
+-Unmount-->
+	componentWillUnount: opuesto componentDidMount. Removes
+	eventos, timers y Subscripciones.
+
+*COMPONENTES CONTROLADOS:

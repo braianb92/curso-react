@@ -11,7 +11,7 @@ class Header extends React.Component
             <header>
                 <h1>Header</h1>
                 <nav>
-                    {links.map(link => <a href="#">{link}</a>)}
+                    {links.map(link => <a href="#" key={link}>{link}</a>)}
                 </nav>
             </header>
             </>
