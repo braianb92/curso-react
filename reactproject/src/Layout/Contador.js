@@ -1,16 +1,18 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {aumentarContador,disminuirContador,resetearContador} from "../api/actions";
+import {bindActionCreators} from "redux";
 
 class Contador extends React.Component
 {
     render()
     {
-        let {contador} = this.props;
+        let {contador, aumentarContador, disminuirContador, resetearContador} = this.props;
         return(
             <>
-            <button >+</button>
-            <button >Reset</button>
-            <button  >-</button>
+            <button  onClick={aumentarContador}>+</button>
+            <button onClick={resetearContador}>Reset</button>
+            <button onClick={disminuirContador} >-</button>
             <p>{contador}</p>
             </>)
     }
@@ -25,9 +27,9 @@ let mapStateToProps = store =>  {
 
 let mapDispatchToProps = dispatch => {
     return{
-        aumentarContador : null,
-        disminuirContador : null,
-        resetearContador : null
+        aumentarContador : bindActionCreators(aumentarContador,dispatch),
+        disminuirContador : bindActionCreators(disminuirContador,dispatch),
+        resetearContador : bindActionCreators(resetearContador,dispatch)
     }
 };
 

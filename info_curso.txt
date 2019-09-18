@@ -122,4 +122,7 @@ Conectar componentes individuales con el store
 	usamos el primer parametro de connect el cual es una funcion. Esta
 	funcion recibe una copia de la funcion para despachar(llamada dispatch)
 	y lo que retorne, va a formar parte de los props del 
-	componente que estemos conectando.
+	componente que estemos conectando. Creo todas las acciones que necesito 
+	en algun lugar y las importe en el componente donde estoy trabajando.
+	Fusiono mi propia accion con la funcion de "dispatch" utilizando 
+	"bindActionCreators" de "redux".

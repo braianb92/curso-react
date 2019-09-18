@@ -36,15 +36,11 @@ class App extends Component
         super();
         this.state ={
             texto : "Lorem ipsum dolor sit amet",
-            contador: 0,
             visible: true,
             nombre: "",
             apellido: "",
             usuarios: []
         }
-        this.aumentarContador = this.aumentarContador.bind(this);
-        this.disminuirContador = this.disminuirContador.bind(this);
-        this.resetContador = this.resetContador.bind(this);
         this.toogleVisibility=this.toogleVisibility.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleChange=this.handleChange.bind(this);
@@ -105,26 +101,6 @@ class App extends Component
         
         
         
-    }
-
-    // cambiarTexto()
-    // {
-    //     this.setState({texto: "Ipsum Lorem"});
-    // }
-
-    aumentarContador()
-    {
-        this.setState({contador: this.state.contador+1})
-    }
-
-    disminuirContador()
-    {
-        this.setState({contador: this.state.contador-1})
-    }
-
-    resetContador()
-    {
-        this.setState({contador: 0})
     }
 
     toogleVisibility()
