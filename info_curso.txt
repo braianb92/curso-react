@@ -79,4 +79,19 @@ y solo funcionan para componentes de tipo clase, no para componentes funcionales
 	componentWillUnount: opuesto componentDidMount. Removes
 	eventos, timers y Subscripciones.
 
-*COMPONENTES CONTROLADOS:
+*REACT REDUX:
+	es una libreria para implementar el patron de pub/sub en cualquier
+	aplicacion de JS. Se seàra en dos : redux y react-reduc, siendo la ultima la que nos permite
+	conectar redux con una aplicacion de React.
+	"npm i -S redux react-redux"
+	-Store: es analogo al state de un componente pero este
+	no se crea directo sino que con un reducer.
+	-Reducer: Es una funcion pura que toma dos parametros:
+	el estado inicial de la app (o anterior) y el action
+
+	REDUX IMPLEMENTACION
+	1) Crear en algun archivo un store: Para eso necesitamos
+	la funcion createStore de "redux". Esta toma como parametrosun reducer.
+	2)Crear en algun archivo un reducer : Para eso no se necesita nada,
+	solo exportar una funcion que tome dos parametros y siempre retorne algo
+	dentro de un switch.

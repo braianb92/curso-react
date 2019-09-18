@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import ListadoUsuarios from "./ListadoUsuarios";
 
 
 class Formulario extends Component{
     render(){
         let {toogleVisibility,visible,handleSubmit,handleChange,
-        nombre,apellido}=this.props;
+        nombre,apellido,usuarios}=this.props;
         return(
             <div>
                 
@@ -18,6 +19,7 @@ class Formulario extends Component{
                 <button onClick={toogleVisibility}>
                     {visible ? "Ocultar" : "Mostrar"}
                 </button>
+                <ListadoUsuarios usuarios={usuarios}/>
             </div>
         )
     }
