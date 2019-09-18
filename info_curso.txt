@@ -80,18 +80,46 @@ y solo funcionan para componentes de tipo clase, no para componentes funcionales
 	eventos, timers y Subscripciones.
 
 *REACT REDUX:
-	es una libreria para implementar el patron de pub/sub en cualquier
+	Es una libreria para implementar el patron de pub/sub en cualquier
 	aplicacion de JS. Se seàra en dos : redux y react-reduc, siendo la ultima la que nos permite
 	conectar redux con una aplicacion de React.
 	"npm i -S redux react-redux"
+
 	-Store: es analogo al state de un componente pero este
 	no se crea directo sino que con un reducer.
+
 	-Reducer: Es una funcion pura que toma dos parametros:
 	el estado inicial de la app (o anterior) y el action
 
+	-action: Es una funcion pura que puede vivir en cualquier archivo.
+	No necesitamos anda para crearla pero si es obligacion:
+		1.Que haya retorno de tipo Object.
+		2.Toda operacion entre el inicio del stack al retorno sea sincronica.
+		3.Usualmente el objeto que retorna un action suele tener como minimo la propiedad "type".
+
 	REDUX IMPLEMENTACION
-	1) Crear en algun archivo un store: Para eso necesitamos
-	la funcion createStore de "redux". Esta toma como parametrosun reducer.
-	2)Crear en algun archivo un reducer : Para eso no se necesita nada,
-	solo exportar una funcion que tome dos parametros y siempre retorne algo
-	dentro de un switch.
+		1) Crear en algun archivo un store: Para eso necesitamos
+		la funcion createStore de "redux". Esta toma como parametrosun reducer.
+		2)Crear en algun archivo un reducer : Para eso no se necesita nada,
+		solo exportar una funcion que tome dos parametros y siempre retorne algo
+		dentro de un switch.
+
+Conectar la app con redux
+	1) incluir la parte de la app que nos interesa
+	conectar a redux con el componente Provider de "react-redux".
+	2)pasarle como prop al Provider el store.
+
+Conectar componentes individuales con el store
+	-Consumir el Store: necesitamos la funcion connect de "react-redux",
+	ejecutarla y pasarle el componente que queremos conectar. Ademas
+	usamos el primer parametro de connect el cual es una funcion. Esta
+	funcion recibe una copia del store y lo que retorne, va a formar parte
+	de los props del componente que estemos conectando.
+
+
+-Despachar una accion:necesitamos la funcion connect de "react-redux",
+	ejecutarla y pasarle el componente que queremos conectar.Ademas
+	usamos el primer parametro de connect el cual es una funcion. Esta
+	funcion recibe una copia de la funcion para despachar(llamada dispatch)
+	y lo que retorne, va a formar parte de los props del 
+	componente que estemos conectando.

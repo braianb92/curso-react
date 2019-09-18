@@ -35,7 +35,6 @@ class App extends Component
     {
         super();
         this.state ={
-            links : ["perfil","portfolio","contacto"],
             texto : "Lorem ipsum dolor sit amet",
             contador: 0,
             visible: true,
@@ -43,7 +42,6 @@ class App extends Component
             apellido: "",
             usuarios: []
         }
-        this.cambiarTexto = this.cambiarTexto.bind(this);
         this.aumentarContador = this.aumentarContador.bind(this);
         this.disminuirContador = this.disminuirContador.bind(this);
         this.resetContador = this.resetContador.bind(this);
@@ -109,10 +107,10 @@ class App extends Component
         
     }
 
-    cambiarTexto()
-    {
-        this.setState({texto: "Ipsum Lorem"});
-    }
+    // cambiarTexto()
+    // {
+    //     this.setState({texto: "Ipsum Lorem"});
+    // }
 
     aumentarContador()
     {
@@ -137,12 +135,11 @@ class App extends Component
     render()
     {   console.clear();
         console.table(this.state.usuarios);
-        let {links,contador,visible,nombre,apellido,usuarios} = this.state;
+        let {contador,visible,nombre,apellido,usuarios} = this.state;
         return (
             <>
-                <Header links={links}/>
-                <Contador contador={contador} aumentarCont={this.aumentarContador}
-                disminuirContador={this.disminuirContador} resetContador={this.resetContador}/>
+                <Header/>
+                <Contador/>
                 <Formulario toogleVisibility={this.toogleVisibility} visible={visible} handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange} nombre={nombre} apellido={apellido} usuarios={usuarios}/>
                 <Main/>

@@ -1,6 +1,6 @@
 import {createStore} from "redux";
-import {reducer} from "./reducer";
+import reducer from "./reducer";
 
-let store = createStore();
+let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;
