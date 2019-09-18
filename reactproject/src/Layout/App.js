@@ -35,13 +35,9 @@ class App extends Component
     {
         super();
         this.state ={
-            texto : "Lorem ipsum dolor sit amet",
-            visible: true,
-            nombre: "",
-            apellido: "",
-            usuarios: []
+            usuarios : []
+            
         }
-        this.toogleVisibility=this.toogleVisibility.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleChange=this.handleChange.bind(this);
     }
@@ -103,25 +99,15 @@ class App extends Component
         
     }
 
-    toogleVisibility()
-    {
-        this.setState({visible:!this.state.visible})
-    }
-
     render()
-    {   console.clear();
-        console.table(this.state.usuarios);
-        let {contador,visible,nombre,apellido,usuarios} = this.state;
-        return (
-            <>
+    { 
+        return (<>
                 <Header/>
                 <Contador/>
-                <Formulario toogleVisibility={this.toogleVisibility} visible={visible} handleSubmit={this.handleSubmit}
-                handleChange={this.handleChange} nombre={nombre} apellido={apellido} usuarios={usuarios}/>
+                <Formulario usuarios={usuarios}/>
                 <Main/>
                 <Footer/>
-            </>
-            ); 
+            </>); 
         
     }
 }export default App

@@ -1,6 +1,10 @@
 let init = {
     links : ["perfil","portfolio","contacto"],
-    contador : 0
+    contador : 0,
+    visible: true,
+    nombre: "",
+    apellido: "",
+    usuarios: []
 
 };
 
@@ -15,6 +19,12 @@ let reducer = (prev=init,action) => {
             return {...prev, contador : prev.contador-1};
         case "CONTADOR_RESETEAR":
             return {...prev, contador : prev.contador=0};
+        case "FORMULARIO_TOGGLE":
+            return {...prev, visible : !prev.visible};
+        case "FORMULARIO_CHANGE":
+            return {...prev, [action.id] : action.valor};
+        case "FORMULARIO_SUBMIT":
+            return {...prev, visible : [...prev.usuarios,{nombre:prev.nombre,apellido:prev.apellido}],nombre:"",apellido:""};
         default:
             return prev;
     }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ListadoUsuarios from "./ListadoUsuarios";
-
+import {connect} from "react-redux";
+import {toogleVisibility,handleChange,handleSubmit} from "../api/actions";
+import {bindActionCreators} from "redux";
 
 class Formulario extends Component{
     render(){
@@ -23,4 +25,21 @@ class Formulario extends Component{
             </div>
         )
     }
-}export default Formulario
+}
+let mapStateToProps = store =>  {
+    return {
+        visible : store.visible,
+        nombre : store.nombre,
+        apellido : store.apellido
+    }
+};
+
+let mapDispatchToProps = dispatch => {
+    return{
+        toogleVisibility : bindActionCreators(toogleVisibility,dispatch),
+        handleChange : bindActionCreators(handleChange,dispatch),
+        handleSubmit : bindActionCreators(handleSubmit,dispatch)
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(Formulario)
